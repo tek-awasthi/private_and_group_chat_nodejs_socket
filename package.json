@@ -1,0 +1,15 @@
+{
+  "name": "private_and_group_chat_nodejs_socket",
+  "description": "a real time chat application using nodejs,express, and socket.io",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~3.4.0",
+    "body-parser": "~1.4.3"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
