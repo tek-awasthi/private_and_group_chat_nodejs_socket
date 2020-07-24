@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Chat app</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Custom -->
+  <link href="/css/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/jquery-ui-1.10.4.custom.css">
+  <link type="text/css" href="/css/jquery.ui.chatbox.css" rel="stylesheet" />
+
 </head>
+
 <body>
-  hello world
+
+
+
+  <div id="PrivateTab"> </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-warning-sign"></span> Alert Message
+          </h4>
+        </div>
+        <div class="modal-body" id="alertMsg">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal Loading-->
+
+
+
+
+  <div id="contextFirst" style="display:none;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Start Chatting</h3>
+      </div>
+      <div class="panel-body" style="height:40%; text-align:center;">
+        <form role="form">
+          <input type="input" style="width:100%;" class="form-control input-lg" id="nickname"
+            placeholder="Enter your name!" maxlength="50"><br />
+          <button type="submit" class="btn btn-primary btn-lg" id="startChat">
+            Enter Chat Room
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="context" style="display:none;">
+    <div id="leftbar">
+      <div class="panel panel-primary" style = "height:100vh">
+        <div class="panel-heading">  Active<span class="badge" id="totalUser"></span></div>
+        <div class="panel-body bar">
+          <ul class="list-group" id="userList">
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="chatbar">
+      <div class="panel panel-primary" style = "height:100vh">
+        <div class="panel-heading"> Group Chat </div>
+        <div class="panel-body" id="barch">
+          <div id="messages">
+          </div>
+          <div id="msgSending" style="height:30px;"></div>
+
+          <p class="bubble-content-txt" style="height:30px; "></p>
+
+        </div>
+
+        <div class="panel-footer">
+          <div id="chatBox">
+            <form role="form" class="form-inline" id="chatForm">
+              <input type="hidden" id="username">
+              <input type="input" style="width:100%;" class="form-control input-lg" id="chatInput"
+                placeholder="enter message" required autocomplete="off">
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="/js/jquery.ui.chatbox.js"></script>
+
+
 </body>
+
 </html>
